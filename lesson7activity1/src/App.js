@@ -4,16 +4,19 @@ import './App.css';
 function App() {
     const [operand1, setOperand1] = useState(0);
     const [operand2, setOperand2] = useState(0);
+    const [operand3, setOperand3] = useState(0);
     const [result, setResult] = useState(0);
     function multiply() {
       const a = parseInt(operand1);
       const b = parseInt(operand2);
-      setResult (a * b)
+      const c = parseInt(operand3);
+      setResult (a * b * c)
     }
   return (
    <div className="container">
     <input className="input-field" type="number" placeholder="Enter first operand" value={operand1} onChange={(e) => setOperand1(e.target.value)}/>
     <input className="input-field" type="number" placeholder="Enter second operand" value={operand2} onChange={(e) => setOperand2(e.target.value)}/>
+    <input className="input-field" type="number" placeholder="Enter third operand" value={operand3} onChange={(e) => setOperand3(e.target.value)}/>
    <button onClick={multiply}>multiply</button>
    {result !== null&&
    <div className="result"> Result: {result}</div>}
